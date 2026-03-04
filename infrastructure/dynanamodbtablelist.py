@@ -6,23 +6,20 @@ import boto3
 REGION = 'us-east-1' 
 
 def list_dynamodb_tables():
-    # Cria um cliente do DynamoDB
     dynamodb = boto3.client('dynamodb')
 
-    # Lista as tabelas do DynamoDB
+    # Lists all dynamodb tables
     response = dynamodb.list_tables()
 
-    # Retorna a lista de tabelas
     return response['TableNames']
 
 def list_lambda_functions():
-    # Cria um cliente do Lambda
     lambda_client = boto3.client('lambda')
 
-    # Lista as funções Lambda
+    # Lists all lambda funcionations
     response = lambda_client.list_functions()
 
-    # Retorna a lista de funções Lambda
+    # Return lambda funcion
     return [function['FunctionName'] for function in response['Functions']]
 
 if __name__ == "__main__":

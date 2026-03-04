@@ -1,0 +1,8 @@
+**/.terraform/
+**/.terraform.lock.hcl
+**/terraform.tfstate*
+**/LocalStack/
+**/__pycache__/
+**/*.pyc
+.git/
+venv/
