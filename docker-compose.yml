@@ -1,24 +1,10 @@
-version: "3.8"
-
 services:
-  # CONTAINER 1: LocalStack (Simulates AWS cloud services)
-  localstack:
-    container_name: localstack_main
-    image: localstack/localstack
-    ports:
-      - "4566:4566"
-    environment:
-      - SERVICES=cognito-idp,dynamodb
-      - DEFAULT_REGION=us-east-1
-
-  # CONTAINER 2: Application (My Python app that interacts with LocalStack)
   app_auth:
     build: .
-    depends_on:
-      - localstack
+    volumes:
+      - ~/.aws:/root/.aws:ro  # Mapping keys from my local machine to the container
     environment:
-      - AWS_ENDPOINT_URL=http://localstack:4566
-      - AWS_ACCESS_KEY_ID=test
-      - AWS_SECRET_ACCESS_KEY=test
-      - AWS_DEFAULT_REGION=us-east-1
+      - COGNITO_USER_POOL_ID=us-east-1_5Ezbsap8a
+      - COGNITO_CLIENT_ID=3v932fknrrssoebuck7shsanrm
+      - AWS_REGION=us-east-1
       - PYTHONPATH=/app

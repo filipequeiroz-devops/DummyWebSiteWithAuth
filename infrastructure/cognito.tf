@@ -3,7 +3,7 @@ resource "aws_cognito_user_pool" "pool" {
 
   # Verification and security settings
   auto_verified_attributes = ["email"]
-  
+
   password_policy {
     minimum_length    = 8
     require_lowercase = true
@@ -30,7 +30,7 @@ resource "aws_cognito_user_pool" "pool" {
 resource "aws_cognito_user_pool_client" "client" {
   name         = "app-client-${var.environment}"
   user_pool_id = aws_cognito_user_pool.pool.id
-  
+
   explicit_auth_flows = [
     "ALLOW_USER_PASSWORD_AUTH",
     "ALLOW_REFRESH_TOKEN_AUTH",

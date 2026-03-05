@@ -1,21 +1,66 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cadastro - Informática Solidária</title>
 </head>
-<script src="script.js"></script>
-
 <body>
-    <h1>Welcome to the Application</h1>
-    <p>This is the main page of the application.</p>
+    <h2>Cadastro - Informática Solidária</h2>
+    
+    <input type="email" id="email" placeholder="E-mail">
+    <input type="password" id="password" placeholder="Senha">
+    <button id="btnCadastrar" onclick="cadastrar()">Cadastrar</button>
 
-    <form action="/login" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Login" onclick="validate()">
-    </form>
+    <div id="statusMessage" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        async function cadastrar() {
+            const emailField = document.getElementById('email');
+            const passwordField = document.getElementById('password');
+            const statusDiv = document.getElementById('statusMessage');
+            const btn = document.getElementById('btnCadastrar');
+
+            const email = emailField.value;
+            const password = passwordField.value;
+            const API_URL = "https://2h1wm5fwje.execute-api.us-east-1.amazonaws.com/production/signup";
+            
+            // Feedback visual imediato
+            statusDiv.innerText = "Processando cadastro...";
+            statusDiv.style.color = "blue";
+            btn.disabled = true;
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(
+                        { email, 
+                          password }
+                    ),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                
+                const result = await response.json();
+
+                if (response.ok) {
+                    // MENSAGEM DE SUCESSO
+                    statusDiv.innerText = "✅ Sucesso! O usuário foi gravado no Cognito.";
+                    statusDiv.style.color = "green";
+                    
+                    // REFRESH DOS CAMPOS (Limpa os inputs)
+                    emailField.value = "";
+                    passwordField.value = "";
+                } else {
+                    // MENSAGEM DE ERRO (Ex: Senha fraca ou usuário já existe)
+                    statusDiv.innerText = "❌ Erro ao gravar: " + (result.error || "Verifique os dados.");
+                    statusDiv.style.color = "red";
+                }
+            } catch (err) {
+                statusDiv.innerText = "❌ Erro de conexão com a API.";
+                statusDiv.style.color = "red";
+            } finally {
+                btn.disabled = false;
+            }
+        }
+    </script>
 </body>
 </html>
