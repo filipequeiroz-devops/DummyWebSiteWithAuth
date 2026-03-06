@@ -5,8 +5,8 @@ resource "aws_apigatewayv2_api" "lambda_cognito_api" {
   # CORS CONFIG
   cors_configuration {
     allow_origins = ["*"]
-    allow_methods = ["POST", "OPTIONS"]
-    allow_headers = ["content-type"]
+    allow_methods = ["POST", "GET", "OPTIONS"]
+    allow_headers = ["content-type", "authorization"]
   }
 }
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Account - Informática Solidária</title>
+</head>
+<body>
+    <h2>Confirm your Email</h2>
+    <p>Please enter the code sent to your email.</p>
+    
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="code" placeholder="6-digit code">
+    <button id="btnConfirm" onclick="confirm()">Confirm Account</button>
+
+    <div id="statusMessage" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        // SRE Logic: Auto-fill email from URL parameters
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const emailParam = urlParams.get('email');
+            if (emailParam) {
+                document.getElementById('email').value = emailParam;
+            }
+        };
+
+        async function confirm() {
+            const email = document.getElementById('email').value;
+            const code = document.getElementById('code').value;
+            const statusDiv = document.getElementById('statusMessage');
+            const API_URL = "https://2h1wm5fwje.execute-api.us-east-1.amazonaws.com/production/confirm";
+
+            statusDiv.innerText = "Validating code...";
+            statusDiv.style.color = "blue";
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, code })
+                });
+                
+                if (response.ok) {
+                    statusDiv.innerText = "✅ Account activated! Redirecting to Login...";
+                    statusDiv.style.color = "green";
+                    setTimeout(() => { window.location.href = "login.html"; }, 2000);
+                } else {
+                    const result = await response.json();
+                    statusDiv.innerText = "❌ Error: " + (result.error || "Incorrect code.");
+                    statusDiv.style.color = "red";
+                }
+            } catch (err) {
+                statusDiv.innerText = "❌ Connection error.";
+                statusDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

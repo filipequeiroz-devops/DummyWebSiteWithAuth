@@ -1,28 +1,61 @@
-<h2>Login - Informática Solidária</h2>
-<input type="email" id="login_email" placeholder="E-mail">
-<input type="password" id="login_password" placeholder="Senha">
-<button onclick="fazerLogin()">Entrar</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Informática Solidária</title>
+</head>
+<body>
+    <h2>Login - Informática Solidária</h2>
+    
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="btnLogin" onclick="login()">Login</button>
 
-<script>
-    async function fazerLogin() {
-        const email = document.getElementById('login_email').value;
-        const password = document.getElementById('login_password').value;
-        const API_URL = "https://2h1wm5fwje.execute-api.us-east-1.amazonaws.com/production/login"; 
+    <div id="statusMessage" style="margin-top: 20px; font-weight: bold;"></div>
 
-        const response = await fetch(API_URL, {
-            method: 'POST',
-            body: JSON.stringify({ email, password })
-        });
+    <script>
+        async function login() {
+            const email     = document.getElementById('email').value;
+            const password  = document.getElementById('password').value;
+            const statusDiv = document.getElementById('statusMessage');
+            const btn       = document.getElementById('btnLogin');
 
-        const result = await response.json();
-        
-        if (response.ok) {
-  
-            localStorage.setItem('userToken', result.token);
-            alert("Login realizado com sucesso! Token salvo.");
+            const API_URL = "https://2h1wm5fwje.execute-api.us-east-1.amazonaws.com/production/login";
+            
+            statusDiv.innerText = "Authenticating...";
+            statusDiv.style.color = "blue";
+            btn.disabled = true;
 
-        } else {
-            alert("Erro no login: " + result.error);
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                
+                const result = await response.json();
+
+                if (response.ok && result.token) {
+                    // Persistent authentication using localStorage
+                    localStorage.setItem('userToken', result.token);
+                    
+                    statusDiv.innerText = "✅ Authenticated! Redirecting...";
+                    statusDiv.style.color = "green";
+
+                    setTimeout(() => {
+                        window.location.href = "profile.html";
+                    }, 1000);
+                } else {
+                    statusDiv.innerText = "❌ Error: Authentication failed.";
+                    statusDiv.style.color = "red";
+                }
+            } catch (err) {
+                statusDiv.innerText = "❌ Error connecting to the authentication service.";
+                statusDiv.style.color = "red";
+            } finally {
+                btn.disabled = false;
+            }
         }
-    }
-</script>
+    </script>
+</body>
+</html>

@@ -1,61 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro - Informática Solidária</title>
+    <title>Signup - Informática Solidária</title>
 </head>
 <body>
-    <h2>Cadastro - Informática Solidária</h2>
+    <h2>Signup - Informática Solidária</h2>
     
-    <input type="email" id="email" placeholder="E-mail">
-    <input type="password" id="password" placeholder="Senha">
-    <button id="btnCadastrar" onclick="cadastrar()">Cadastrar</button>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="btnSignup" onclick="signup()">Sign Up</button>
 
     <div id="statusMessage" style="margin-top: 20px; font-weight: bold;"></div>
 
     <script>
-        async function cadastrar() {
+        async function signup() {
             const emailField = document.getElementById('email');
             const passwordField = document.getElementById('password');
             const statusDiv = document.getElementById('statusMessage');
-            const btn = document.getElementById('btnCadastrar');
+            const btn = document.getElementById('btnSignup');
 
             const email = emailField.value;
             const password = passwordField.value;
             const API_URL = "https://2h1wm5fwje.execute-api.us-east-1.amazonaws.com/production/signup";
             
-            // Feedback visual imediato
-            statusDiv.innerText = "Processando cadastro...";
+            // Visual feedback for user
+            statusDiv.innerText = "Processing signup...";
             statusDiv.style.color = "blue";
             btn.disabled = true;
 
             try {
                 const response = await fetch(API_URL, {
                     method: 'POST',
-                    body: JSON.stringify(
-                        { email, 
-                          password }
-                    ),
+                    body: JSON.stringify({ email, password }),
                     headers: { 'Content-Type': 'application/json' }
                 });
                 
                 const result = await response.json();
 
                 if (response.ok) {
-                    // MENSAGEM DE SUCESSO
-                    statusDiv.innerText = "✅ Sucesso! O usuário foi gravado no Cognito.";
+                    statusDiv.innerText = "✅ Success! User recorded in Cognito.";
                     statusDiv.style.color = "green";
                     
-                    // REFRESH DOS CAMPOS (Limpa os inputs)
-                    emailField.value = "";
-                    passwordField.value = "";
+                    // SRE flow: Redirecting to confirmation page with email parameter
+                    setTimeout(() => {
+                        window.location.href = `confirm.html?email=${encodeURIComponent(email)}`;
+                    }, 2000);
+
                 } else {
-                    // MENSAGEM DE ERRO (Ex: Senha fraca ou usuário já existe)
-                    statusDiv.innerText = "❌ Erro ao gravar: " + (result.error || "Verifique os dados.");
+                    statusDiv.innerText = "❌ Signup error: " + (result.error || "Verify your data.");
                     statusDiv.style.color = "red";
                 }
             } catch (err) {
-                statusDiv.innerText = "❌ Erro de conexão com a API.";
+                statusDiv.innerText = "❌ API connection error.";
                 statusDiv.style.color = "red";
             } finally {
                 btn.disabled = false;
