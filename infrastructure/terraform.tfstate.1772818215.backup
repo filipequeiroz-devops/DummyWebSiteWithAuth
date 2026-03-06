@@ -1,0 +1,1589 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.4",
+  "serial": 148,
+  "lineage": "8e155ab2-566f-9830-a13e-9cd7886a6709",
+  "outputs": {
+    "api_url": {
+      "value": "https://2h1wm5fwje.execute-api.us-east-1.amazonaws.com/signup",
+      "type": "string"
+    },
+    "client_id": {
+      "value": "1o5ssch4aal10rgo7ir9hcp9g4",
+      "type": "string"
+    },
+    "dynamodb-arn": {
+      "value": "arn:aws:dynamodb:us-east-1:307162859835:table/UsersProfile-dev",
+      "type": "string"
+    },
+    "dynamodb-id": {
+      "value": "UsersProfile-dev",
+      "type": "string"
+    },
+    "dynamodb-name": {
+      "value": "UsersProfile-dev",
+      "type": "string"
+    },
+    "user_pool_id": {
+      "value": "us-east-1_5Ve6Xvqf9",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "archive_file",
+      "name": "authorize_zip",
+      "provider": "provider[\"registry.terraform.io/hashicorp/archive\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "exclude_symlink_directories": null,
+            "excludes": null,
+            "id": "b5004995521ac57d5204db0ec30201a7193ec31d",
+            "output_base64sha256": "xRn+/5wsVBop7zlOFIUHDsY5x9v8OfDO5EYHT7+V7SI=",
+            "output_base64sha512": "3UlyeEpSbDjYlJ0mh6JLF4hnVY11VpZ+njfILrXGVDnxG27sDdNjSi5Ga4issNbICeQHC8XxokyVamejUKAMcg==",
+            "output_file_mode": null,
+            "output_md5": "e29e836dd0374074a889316b73fda04b",
+            "output_path": "./handler/lambda_authorize_payload.zip",
+            "output_sha": "b5004995521ac57d5204db0ec30201a7193ec31d",
+            "output_sha256": "c519feff9c2c541a29ef394e1485070ec639c7dbfc39f0cee446074fbf95ed22",
+            "output_sha512": "dd4972784a526c38d8949d2687a24b178867558d7556967e9e37c82eb5c65439f11b6eec0dd3634a2e466b88acb0d6c809e4070bc5f1a24c956a67a350a00c72",
+            "output_size": 393,
+            "source": [],
+            "source_content": null,
+            "source_content_filename": null,
+            "source_dir": "./handler/authorize",
+            "source_file": null,
+            "type": "zip"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "archive_file",
+      "name": "confirm_zip",
+      "provider": "provider[\"registry.terraform.io/hashicorp/archive\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "exclude_symlink_directories": null,
+            "excludes": null,
+            "id": "45abdc45dd97eebea1e96f151e505b7f801e6180",
+            "output_base64sha256": "eVgfooH0c6q1GdaGWAGasAPzm8SSgZxzF2GhaWUYW+I=",
+            "output_base64sha512": "kmY+vtTh9EEUr1o4qpwU2FHaw1LTMDDJT4W8eNk+y1L1XfpClC7YWgBEYRsGNdrrc+beTWyeCnK0u1CLCzzhow==",
+            "output_file_mode": null,
+            "output_md5": "161cb600eece16091e4d070e294c27ba",
+            "output_path": "./handler/lambda_confirm_payload.zip",
+            "output_sha": "45abdc45dd97eebea1e96f151e505b7f801e6180",
+            "output_sha256": "79581fa281f473aab519d68658019ab003f39bc492819c731761a16965185be2",
+            "output_sha512": "92663ebed4e1f44114af5a38aa9c14d851dac352d33030c94f85bc78d93ecb52f55dfa42942ed85a0044611b0635daeb73e6de4d6c9e0a72b4bb508b0b3ce1a3",
+            "output_size": 609,
+            "source": [],
+            "source_content": null,
+            "source_content_filename": null,
+            "source_dir": "./handler/confirm",
+            "source_file": null,
+            "type": "zip"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "archive_file",
+      "name": "lambda_zip_login",
+      "provider": "provider[\"registry.terraform.io/hashicorp/archive\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "exclude_symlink_directories": null,
+            "excludes": null,
+            "id": "702c29e762100a5fb5715cc71e2e437b3fb57de2",
+            "output_base64sha256": "+j7/gOUsJ6b6tdRybIKZDUBr99XKPSyVcQKZWszFinI=",
+            "output_base64sha512": "UJBY7uxfCvZJ/ASXPApF7lrWunvzIYdvysEYF4uvhbwkpt+aaKJacsMtvct5CjRbJCVrHFvJDByPAuUoJUl/0w==",
+            "output_file_mode": null,
+            "output_md5": "48d4dca8bb761335ea94ed2242b794c5",
+            "output_path": "./handler/lambda_login_payload.zip",
+            "output_sha": "702c29e762100a5fb5715cc71e2e437b3fb57de2",
+            "output_sha256": "fa3eff80e52c27a6fab5d4726c82990d406bf7d5ca3d2c957102995accc58a72",
+            "output_sha512": "509058eeec5f0af649fc04973c0a45ee5ad6ba7bf321876fcac118178baf85bc24a6df9a68a25a72c32dbdcb790a345b24256b1c5bc90c1c8f02e52825497fd3",
+            "output_size": 652,
+            "source": [],
+            "source_content": null,
+            "source_content_filename": null,
+            "source_dir": "./handler/login",
+            "source_file": null,
+            "type": "zip"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "archive_file",
+      "name": "lambda_zip_signup",
+      "provider": "provider[\"registry.terraform.io/hashicorp/archive\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "exclude_symlink_directories": null,
+            "excludes": null,
+            "id": "929a9333c3743893f0c66f787f2e3c462a5f5e35",
+            "output_base64sha256": "jrcrTpKmxvT+cAGOMXn8I5vLWA+Fbs/Qf3SfOWe5iYA=",
+            "output_base64sha512": "pZPSyITnD40uBBbdWcLmPBNOkEsTgJuUG2T93rMPR1eF4j1QAk8y9bmDFITgqAcGuhMRvhluVaq4rjfZj0LjtQ==",
+            "output_file_mode": null,
+            "output_md5": "426a19bf4322ab76d234f09ed7f0c0b5",
+            "output_path": "./handler/lambda_signup_payload.zip",
+            "output_sha": "929a9333c3743893f0c66f787f2e3c462a5f5e35",
+            "output_sha256": "8eb72b4e92a6c6f4fe70018e3179fc239bcb580f856ecfd07f749f3967b98980",
+            "output_sha512": "a593d2c884e70f8d2e0416dd59c2e63c134e904b13809b941b64fddeb30f475785e23d50024f32f5b9831484e0a80706ba1311be196e55aab8ae37d98f42e3b5",
+            "output_size": 652,
+            "source": [],
+            "source_content": null,
+            "source_content_filename": null,
+            "source_dir": "./handler/signup",
+            "source_file": null,
+            "type": "zip"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_api",
+      "name": "lambda_cognito_api",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_endpoint": "https://2h1wm5fwje.execute-api.us-east-1.amazonaws.com",
+            "api_key_selection_expression": "$request.header.x-api-key",
+            "arn": "arn:aws:apigateway:us-east-1::/apis/2h1wm5fwje",
+            "body": null,
+            "cors_configuration": [
+              {
+                "allow_credentials": false,
+                "allow_headers": [
+                  "content-type"
+                ],
+                "allow_methods": [
+                  "OPTIONS",
+                  "POST"
+                ],
+                "allow_origins": [
+                  "*"
+                ],
+                "expose_headers": [],
+                "max_age": 0
+              }
+            ],
+            "credentials_arn": null,
+            "description": "",
+            "disable_execute_api_endpoint": false,
+            "execution_arn": "arn:aws:execute-api:us-east-1:307162859835:2h1wm5fwje",
+            "fail_on_warnings": null,
+            "id": "2h1wm5fwje",
+            "ip_address_type": "ipv4",
+            "name": "lambda-cognito-api-dev",
+            "protocol_type": "HTTP",
+            "region": "us-east-1",
+            "route_key": null,
+            "route_selection_expression": "$request.method $request.path",
+            "tags": {},
+            "tags_all": {},
+            "target": null,
+            "version": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_authorizer",
+      "name": "cognito_auth",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "authorizer_credentials_arn": "",
+            "authorizer_payload_format_version": "",
+            "authorizer_result_ttl_in_seconds": 0,
+            "authorizer_type": "JWT",
+            "authorizer_uri": "",
+            "enable_simple_responses": false,
+            "id": "bips9w",
+            "identity_sources": [
+              "$request.header.Authorization"
+            ],
+            "jwt_configuration": [
+              {
+                "audience": [
+                  "1o5ssch4aal10rgo7ir9hcp9g4"
+                ],
+                "issuer": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_5Ve6Xvqf9"
+              }
+            ],
+            "name": "cognito-authorizer",
+            "region": "us-east-1",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiZGVsZXRlIjoxODAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_integration",
+      "name": "lambda_integration",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "connection_id": "",
+            "connection_type": "INTERNET",
+            "content_handling_strategy": "",
+            "credentials_arn": "",
+            "description": "",
+            "id": "wgipnc1",
+            "integration_method": "POST",
+            "integration_response_selection_expression": "",
+            "integration_subtype": "",
+            "integration_type": "AWS_PROXY",
+            "integration_uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_signup/invocations",
+            "passthrough_behavior": "",
+            "payload_format_version": "1.0",
+            "region": "us-east-1",
+            "request_parameters": {},
+            "request_templates": {},
+            "response_parameters": [],
+            "template_selection_expression": "",
+            "timeout_milliseconds": 30000,
+            "tls_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_signup",
+            "data.archive_file.lambda_zip_signup"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_integration",
+      "name": "lambda_integration_authorize",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "connection_id": "",
+            "connection_type": "INTERNET",
+            "content_handling_strategy": "",
+            "credentials_arn": "",
+            "description": "",
+            "id": "pqk1nf8",
+            "integration_method": "POST",
+            "integration_response_selection_expression": "",
+            "integration_subtype": "",
+            "integration_type": "AWS_PROXY",
+            "integration_uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_authorization/invocations",
+            "passthrough_behavior": "",
+            "payload_format_version": "1.0",
+            "region": "us-east-1",
+            "request_parameters": {},
+            "request_templates": {},
+            "response_parameters": [],
+            "template_selection_expression": "",
+            "timeout_milliseconds": 30000,
+            "tls_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_authorization",
+            "data.archive_file.authorize_zip"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_integration",
+      "name": "lambda_integration_confirm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "connection_id": "",
+            "connection_type": "INTERNET",
+            "content_handling_strategy": "",
+            "credentials_arn": "",
+            "description": "",
+            "id": "8d1v8su",
+            "integration_method": "POST",
+            "integration_response_selection_expression": "",
+            "integration_subtype": "",
+            "integration_type": "AWS_PROXY",
+            "integration_uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_confirmation/invocations",
+            "passthrough_behavior": "",
+            "payload_format_version": "1.0",
+            "region": "us-east-1",
+            "request_parameters": {},
+            "request_templates": {},
+            "response_parameters": [],
+            "template_selection_expression": "",
+            "timeout_milliseconds": 30000,
+            "tls_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_confirmation",
+            "data.archive_file.confirm_zip"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_integration",
+      "name": "lambda_integration_login",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "connection_id": "",
+            "connection_type": "INTERNET",
+            "content_handling_strategy": "",
+            "credentials_arn": "",
+            "description": "",
+            "id": "79bhyls",
+            "integration_method": "POST",
+            "integration_response_selection_expression": "",
+            "integration_subtype": "",
+            "integration_type": "AWS_PROXY",
+            "integration_uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_login/invocations",
+            "passthrough_behavior": "",
+            "payload_format_version": "1.0",
+            "region": "us-east-1",
+            "request_parameters": {},
+            "request_templates": {},
+            "response_parameters": [],
+            "template_selection_expression": "",
+            "timeout_milliseconds": 30000,
+            "tls_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_login",
+            "data.archive_file.lambda_zip_login"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_integration",
+      "name": "lambda_integration_signup",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "connection_id": "",
+            "connection_type": "INTERNET",
+            "content_handling_strategy": "",
+            "credentials_arn": "",
+            "description": "",
+            "id": "ecwbs21",
+            "integration_method": "POST",
+            "integration_response_selection_expression": "",
+            "integration_subtype": "",
+            "integration_type": "AWS_PROXY",
+            "integration_uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_signup/invocations",
+            "passthrough_behavior": "",
+            "payload_format_version": "1.0",
+            "region": "us-east-1",
+            "request_parameters": {},
+            "request_templates": {},
+            "response_parameters": [],
+            "template_selection_expression": "",
+            "timeout_milliseconds": 30000,
+            "tls_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_signup",
+            "data.archive_file.lambda_zip_signup"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_route",
+      "name": "lambda_route_confirm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "api_key_required": false,
+            "authorization_scopes": [],
+            "authorization_type": "NONE",
+            "authorizer_id": "",
+            "id": "iqskx88",
+            "model_selection_expression": "",
+            "operation_name": "",
+            "region": "us-east-1",
+            "request_models": {},
+            "request_parameter": [],
+            "route_key": "POST /confirm",
+            "route_response_selection_expression": "",
+            "target": "integrations/8d1v8su"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_apigatewayv2_integration.lambda_integration_confirm",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_confirmation",
+            "data.archive_file.confirm_zip"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_route",
+      "name": "lambda_route_login",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "api_key_required": false,
+            "authorization_scopes": [],
+            "authorization_type": "NONE",
+            "authorizer_id": "",
+            "id": "t3fuyph",
+            "model_selection_expression": "",
+            "operation_name": "",
+            "region": "us-east-1",
+            "request_models": {},
+            "request_parameter": [],
+            "route_key": "POST /login",
+            "route_response_selection_expression": "",
+            "target": "integrations/79bhyls"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_apigatewayv2_integration.lambda_integration_login",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_login",
+            "data.archive_file.lambda_zip_login"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_route",
+      "name": "lambda_route_protected",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "api_key_required": false,
+            "authorization_scopes": [],
+            "authorization_type": "JWT",
+            "authorizer_id": "bips9w",
+            "id": "vweynna",
+            "model_selection_expression": "",
+            "operation_name": "",
+            "region": "us-east-1",
+            "request_models": {},
+            "request_parameter": [],
+            "route_key": "GET /meu-perfil",
+            "route_response_selection_expression": "",
+            "target": "integrations/79bhyls"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_apigatewayv2_authorizer.cognito_auth",
+            "aws_apigatewayv2_integration.lambda_integration_login",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_login",
+            "data.archive_file.lambda_zip_login"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_route",
+      "name": "lambda_route_signup",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "api_id": "2h1wm5fwje",
+            "api_key_required": false,
+            "authorization_scopes": [],
+            "authorization_type": "NONE",
+            "authorizer_id": "",
+            "id": "i6361s9",
+            "model_selection_expression": "",
+            "operation_name": "",
+            "region": "us-east-1",
+            "request_models": {},
+            "request_parameter": [],
+            "route_key": "POST /signup",
+            "route_response_selection_expression": "",
+            "target": "integrations/wgipnc1"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_apigatewayv2_integration.lambda_integration",
+            "aws_apigatewayv2_integration.lambda_integration_signup",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_signup",
+            "data.archive_file.lambda_zip_signup"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_apigatewayv2_stage",
+      "name": "lambda_stage",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_log_settings": [],
+            "api_id": "2h1wm5fwje",
+            "arn": "arn:aws:apigateway:us-east-1::/apis/2h1wm5fwje/stages/production",
+            "auto_deploy": true,
+            "client_certificate_id": "",
+            "default_route_settings": [
+              {
+                "data_trace_enabled": false,
+                "detailed_metrics_enabled": false,
+                "logging_level": "",
+                "throttling_burst_limit": 0,
+                "throttling_rate_limit": 0
+              }
+            ],
+            "deployment_id": "p105lp",
+            "description": "",
+            "execution_arn": "arn:aws:execute-api:us-east-1:307162859835:2h1wm5fwje/production",
+            "id": "production",
+            "invoke_url": "https://2h1wm5fwje.execute-api.us-east-1.amazonaws.com/production",
+            "name": "production",
+            "region": "us-east-1",
+            "route_settings": [],
+            "stage_variables": {},
+            "tags": {},
+            "tags_all": {}
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_cognito_user_pool",
+      "name": "pool",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "account_recovery_setting": [
+              {
+                "recovery_mechanism": [
+                  {
+                    "name": "verified_email",
+                    "priority": 1
+                  },
+                  {
+                    "name": "verified_phone_number",
+                    "priority": 2
+                  }
+                ]
+              }
+            ],
+            "admin_create_user_config": [
+              {
+                "allow_admin_create_user_only": false,
+                "invite_message_template": []
+              }
+            ],
+            "alias_attributes": null,
+            "arn": "arn:aws:cognito-idp:us-east-1:307162859835:userpool/us-east-1_5Ve6Xvqf9",
+            "auto_verified_attributes": [
+              "email"
+            ],
+            "creation_date": "2026-03-04T20:58:23Z",
+            "custom_domain": "",
+            "deletion_protection": "INACTIVE",
+            "device_configuration": [],
+            "domain": "",
+            "email_configuration": [
+              {
+                "configuration_set": "",
+                "email_sending_account": "COGNITO_DEFAULT",
+                "from_email_address": "",
+                "reply_to_email_address": "",
+                "source_arn": ""
+              }
+            ],
+            "email_mfa_configuration": [],
+            "email_verification_message": "",
+            "email_verification_subject": "",
+            "endpoint": "cognito-idp.us-east-1.amazonaws.com/us-east-1_5Ve6Xvqf9",
+            "estimated_number_of_users": 3,
+            "id": "us-east-1_5Ve6Xvqf9",
+            "lambda_config": [],
+            "last_modified_date": "2026-03-04T20:58:23Z",
+            "mfa_configuration": "OFF",
+            "name": "user-pool-dev",
+            "password_policy": [
+              {
+                "minimum_length": 8,
+                "password_history_size": 0,
+                "require_lowercase": true,
+                "require_numbers": true,
+                "require_symbols": true,
+                "require_uppercase": true,
+                "temporary_password_validity_days": 7
+              }
+            ],
+            "region": "us-east-1",
+            "schema": [
+              {
+                "attribute_data_type": "String",
+                "developer_only_attribute": false,
+                "mutable": true,
+                "name": "email",
+                "number_attribute_constraints": [],
+                "required": true,
+                "string_attribute_constraints": [
+                  {
+                    "max_length": "256",
+                    "min_length": "7"
+                  }
+                ]
+              }
+            ],
+            "sign_in_policy": [
+              {
+                "allowed_first_auth_factors": [
+                  "PASSWORD"
+                ]
+              }
+            ],
+            "sms_authentication_message": "",
+            "sms_configuration": [],
+            "sms_verification_message": "",
+            "software_token_mfa_configuration": [],
+            "tags": {},
+            "tags_all": {},
+            "user_attribute_update_settings": [],
+            "user_pool_add_ons": [],
+            "user_pool_tier": "ESSENTIALS",
+            "username_attributes": [],
+            "username_configuration": [],
+            "verification_message_template": [
+              {
+                "default_email_option": "CONFIRM_WITH_CODE",
+                "email_message": "",
+                "email_message_by_link": "",
+                "email_subject": "",
+                "email_subject_by_link": "",
+                "sms_message": ""
+              }
+            ],
+            "web_authn_configuration": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_cognito_user_pool_client",
+      "name": "client",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_token_validity": 0,
+            "allowed_oauth_flows": [],
+            "allowed_oauth_flows_user_pool_client": false,
+            "allowed_oauth_scopes": [],
+            "analytics_configuration": [],
+            "auth_session_validity": 3,
+            "callback_urls": [],
+            "client_secret": "",
+            "default_redirect_uri": "",
+            "enable_propagate_additional_user_context_data": false,
+            "enable_token_revocation": true,
+            "explicit_auth_flows": [
+              "ALLOW_REFRESH_TOKEN_AUTH",
+              "ALLOW_USER_PASSWORD_AUTH",
+              "ALLOW_USER_SRP_AUTH"
+            ],
+            "generate_secret": null,
+            "id": "1o5ssch4aal10rgo7ir9hcp9g4",
+            "id_token_validity": 0,
+            "logout_urls": [],
+            "name": "app-client-dev",
+            "prevent_user_existence_errors": "",
+            "read_attributes": [],
+            "refresh_token_rotation": [],
+            "refresh_token_validity": 30,
+            "region": "us-east-1",
+            "supported_identity_providers": [],
+            "token_validity_units": [],
+            "user_pool_id": "us-east-1_5Ve6Xvqf9",
+            "write_attributes": []
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "client_secret"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "dependencies": [
+            "aws_cognito_user_pool.pool"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_dynamodb_table",
+      "name": "users_table",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:dynamodb:us-east-1:307162859835:table/UsersProfile-dev",
+            "attribute": [
+              {
+                "name": "user_id",
+                "type": "S"
+              }
+            ],
+            "billing_mode": "PAY_PER_REQUEST",
+            "deletion_protection_enabled": false,
+            "global_secondary_index": [],
+            "global_table_witness": [],
+            "hash_key": "user_id",
+            "id": "UsersProfile-dev",
+            "import_table": [],
+            "local_secondary_index": [],
+            "name": "UsersProfile-dev",
+            "on_demand_throughput": [],
+            "point_in_time_recovery": [
+              {
+                "enabled": false,
+                "recovery_period_in_days": 0
+              }
+            ],
+            "range_key": null,
+            "read_capacity": 0,
+            "region": "us-east-1",
+            "replica": [],
+            "restore_date_time": null,
+            "restore_source_name": null,
+            "restore_source_table_arn": null,
+            "restore_to_latest_time": null,
+            "server_side_encryption": [],
+            "stream_arn": "",
+            "stream_enabled": false,
+            "stream_label": "",
+            "stream_view_type": "",
+            "table_class": "STANDARD",
+            "tags": {
+              "Environment": "dev",
+              "Project": "AuthSystem"
+            },
+            "tags_all": {
+              "Environment": "dev",
+              "Project": "AuthSystem"
+            },
+            "timeouts": null,
+            "ttl": [
+              {
+                "attribute_name": "",
+                "enabled": false
+              }
+            ],
+            "warm_throughput": [],
+            "write_capacity": 0
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjYwMDAwMDAwMDAwMCwidXBkYXRlIjozNjAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "lambda_exec_role_websitewithauth",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::307162859835:role/lambda_exec_role_websitewithauth",
+            "assume_role_policy": "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+            "create_date": "2026-03-04T20:58:22Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "lambda_exec_role_websitewithauth",
+            "inline_policy": [
+              {
+                "name": "lambda_cognito_signup_policy",
+                "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"cognito-idp:SignUp\",\"cognito-idp:ConfirmSignUp\",\"cognito-idp:InitiateAuth\"],\"Effect\":\"Allow\",\"Resource\":\"*\"},{\"Action\":[\"logs:CreateLogGroup\",\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:logs:*:*:*\"}]}"
+              }
+            ],
+            "managed_policy_arns": [],
+            "max_session_duration": 3600,
+            "name": "lambda_exec_role_websitewithauth",
+            "name_prefix": "",
+            "path": "/",
+            "permissions_boundary": "",
+            "tags": {},
+            "tags_all": {},
+            "unique_id": "AROAUPBCVJE5X7HKHG3B2"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "name": "lambda_exec_role_websitewithauth"
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role_policy",
+      "name": "cognito_signup_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "lambda_exec_role_websitewithauth:lambda_cognito_signup_policy",
+            "name": "lambda_cognito_signup_policy",
+            "name_prefix": "",
+            "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":[\"cognito-idp:SignUp\",\"cognito-idp:ConfirmSignUp\",\"cognito-idp:InitiateAuth\"],\"Effect\":\"Allow\",\"Resource\":\"*\"},{\"Action\":[\"logs:CreateLogGroup\",\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:logs:*:*:*\"}]}",
+            "role": "lambda_exec_role_websitewithauth"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "name": "lambda_cognito_signup_policy",
+            "role": "lambda_exec_role_websitewithauth"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.lambda_exec_role_websitewithauth"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_function",
+      "name": "process_users_authorization",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "architectures": [
+              "x86_64"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:307162859835:function:process_users_authorization",
+            "capacity_provider_config": [],
+            "code_sha256": "xRn+/5wsVBop7zlOFIUHDsY5x9v8OfDO5EYHT7+V7SI=",
+            "code_signing_config_arn": "",
+            "dead_letter_config": [],
+            "description": "",
+            "durable_config": [],
+            "environment": [],
+            "ephemeral_storage": [
+              {
+                "size": 512
+              }
+            ],
+            "file_system_config": [],
+            "filename": "./handler/lambda_authorize_payload.zip",
+            "function_name": "process_users_authorization",
+            "handler": "authorize_handler.lambda_handler",
+            "id": "process_users_authorization",
+            "image_config": [],
+            "image_uri": "",
+            "invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_authorization/invocations",
+            "kms_key_arn": "",
+            "last_modified": "2026-03-06T16:48:02.000+0000",
+            "layers": [],
+            "logging_config": [
+              {
+                "application_log_level": "",
+                "log_format": "Text",
+                "log_group": "/aws/lambda/process_users_authorization",
+                "system_log_level": ""
+              }
+            ],
+            "memory_size": 128,
+            "package_type": "Zip",
+            "publish": false,
+            "publish_to": null,
+            "qualified_arn": "arn:aws:lambda:us-east-1:307162859835:function:process_users_authorization:$LATEST",
+            "qualified_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_authorization:$LATEST/invocations",
+            "region": "us-east-1",
+            "replace_security_groups_on_destroy": null,
+            "replacement_security_group_ids": null,
+            "reserved_concurrent_executions": -1,
+            "response_streaming_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2021-11-15/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_authorization/response-streaming-invocations",
+            "role": "arn:aws:iam::307162859835:role/lambda_exec_role_websitewithauth",
+            "runtime": "python3.11",
+            "s3_bucket": null,
+            "s3_key": null,
+            "s3_object_version": null,
+            "signing_job_arn": "",
+            "signing_profile_version_arn": "",
+            "skip_destroy": false,
+            "snap_start": [],
+            "source_code_hash": "xRn+/5wsVBop7zlOFIUHDsY5x9v8OfDO5EYHT7+V7SI=",
+            "source_code_size": 393,
+            "source_kms_key_arn": "",
+            "tags": {},
+            "tags_all": {},
+            "tenancy_config": [],
+            "timeout": 3,
+            "timeouts": null,
+            "tracing_config": [
+              {
+                "mode": "PassThrough"
+              }
+            ],
+            "version": "$LATEST",
+            "vpc_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "function_name": "process_users_authorization",
+            "region": "us-east-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "data.archive_file.authorize_zip"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_function",
+      "name": "process_users_confirmation",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "architectures": [
+              "x86_64"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:307162859835:function:process_users_confirmation",
+            "capacity_provider_config": [],
+            "code_sha256": "eVgfooH0c6q1GdaGWAGasAPzm8SSgZxzF2GhaWUYW+I=",
+            "code_signing_config_arn": "",
+            "dead_letter_config": [],
+            "description": "",
+            "durable_config": [],
+            "environment": [
+              {
+                "variables": {
+                  "COGNITO_CLIENT_ID": "1o5ssch4aal10rgo7ir9hcp9g4"
+                }
+              }
+            ],
+            "ephemeral_storage": [
+              {
+                "size": 512
+              }
+            ],
+            "file_system_config": [],
+            "filename": "./handler/lambda_confirm_payload.zip",
+            "function_name": "process_users_confirmation",
+            "handler": "confirm_handler.lambda_handler",
+            "id": "process_users_confirmation",
+            "image_config": [],
+            "image_uri": "",
+            "invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_confirmation/invocations",
+            "kms_key_arn": "",
+            "last_modified": "2026-03-05T18:57:39.000+0000",
+            "layers": [],
+            "logging_config": [
+              {
+                "application_log_level": "",
+                "log_format": "Text",
+                "log_group": "/aws/lambda/process_users_confirmation",
+                "system_log_level": ""
+              }
+            ],
+            "memory_size": 128,
+            "package_type": "Zip",
+            "publish": false,
+            "publish_to": null,
+            "qualified_arn": "arn:aws:lambda:us-east-1:307162859835:function:process_users_confirmation:$LATEST",
+            "qualified_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_confirmation:$LATEST/invocations",
+            "region": "us-east-1",
+            "replace_security_groups_on_destroy": null,
+            "replacement_security_group_ids": null,
+            "reserved_concurrent_executions": -1,
+            "response_streaming_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2021-11-15/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_confirmation/response-streaming-invocations",
+            "role": "arn:aws:iam::307162859835:role/lambda_exec_role_websitewithauth",
+            "runtime": "python3.11",
+            "s3_bucket": null,
+            "s3_key": null,
+            "s3_object_version": null,
+            "signing_job_arn": "",
+            "signing_profile_version_arn": "",
+            "skip_destroy": false,
+            "snap_start": [],
+            "source_code_hash": "eVgfooH0c6q1GdaGWAGasAPzm8SSgZxzF2GhaWUYW+I=",
+            "source_code_size": 609,
+            "source_kms_key_arn": "",
+            "tags": {},
+            "tags_all": {},
+            "tenancy_config": [],
+            "timeout": 3,
+            "timeouts": null,
+            "tracing_config": [
+              {
+                "mode": "PassThrough"
+              }
+            ],
+            "version": "$LATEST",
+            "vpc_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "function_name": "process_users_confirmation",
+            "region": "us-east-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "data.archive_file.confirm_zip"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_function",
+      "name": "process_users_login",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "architectures": [
+              "x86_64"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:307162859835:function:process_users_login",
+            "capacity_provider_config": [],
+            "code_sha256": "+j7/gOUsJ6b6tdRybIKZDUBr99XKPSyVcQKZWszFinI=",
+            "code_signing_config_arn": "",
+            "dead_letter_config": [],
+            "description": "",
+            "durable_config": [],
+            "environment": [
+              {
+                "variables": {
+                  "COGNITO_CLIENT_ID": "1o5ssch4aal10rgo7ir9hcp9g4",
+                  "COGNITO_USER_POOL_ID": "us-east-1_5Ve6Xvqf9"
+                }
+              }
+            ],
+            "ephemeral_storage": [
+              {
+                "size": 512
+              }
+            ],
+            "file_system_config": [],
+            "filename": "./handler/lambda_login_payload.zip",
+            "function_name": "process_users_login",
+            "handler": "login_handler.lambda_handler",
+            "id": "process_users_login",
+            "image_config": [],
+            "image_uri": "",
+            "invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_login/invocations",
+            "kms_key_arn": "",
+            "last_modified": "2026-03-05T19:59:21.000+0000",
+            "layers": [],
+            "logging_config": [
+              {
+                "application_log_level": "",
+                "log_format": "Text",
+                "log_group": "/aws/lambda/process_users_login",
+                "system_log_level": ""
+              }
+            ],
+            "memory_size": 128,
+            "package_type": "Zip",
+            "publish": false,
+            "publish_to": null,
+            "qualified_arn": "arn:aws:lambda:us-east-1:307162859835:function:process_users_login:$LATEST",
+            "qualified_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_login:$LATEST/invocations",
+            "region": "us-east-1",
+            "replace_security_groups_on_destroy": null,
+            "replacement_security_group_ids": null,
+            "reserved_concurrent_executions": -1,
+            "response_streaming_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2021-11-15/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_login/response-streaming-invocations",
+            "role": "arn:aws:iam::307162859835:role/lambda_exec_role_websitewithauth",
+            "runtime": "python3.11",
+            "s3_bucket": null,
+            "s3_key": null,
+            "s3_object_version": null,
+            "signing_job_arn": "",
+            "signing_profile_version_arn": "",
+            "skip_destroy": false,
+            "snap_start": [],
+            "source_code_hash": "+j7/gOUsJ6b6tdRybIKZDUBr99XKPSyVcQKZWszFinI=",
+            "source_code_size": 652,
+            "source_kms_key_arn": "",
+            "tags": {},
+            "tags_all": {},
+            "tenancy_config": [],
+            "timeout": 3,
+            "timeouts": null,
+            "tracing_config": [
+              {
+                "mode": "PassThrough"
+              }
+            ],
+            "version": "$LATEST",
+            "vpc_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "function_name": "process_users_login",
+            "region": "us-east-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "data.archive_file.lambda_zip_login"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_function",
+      "name": "process_users_signup",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "architectures": [
+              "x86_64"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:307162859835:function:process_users_signup",
+            "capacity_provider_config": [],
+            "code_sha256": "jrcrTpKmxvT+cAGOMXn8I5vLWA+Fbs/Qf3SfOWe5iYA=",
+            "code_signing_config_arn": "",
+            "dead_letter_config": [],
+            "description": "",
+            "durable_config": [],
+            "environment": [
+              {
+                "variables": {
+                  "COGNITO_CLIENT_ID": "1o5ssch4aal10rgo7ir9hcp9g4",
+                  "COGNITO_USER_POOL_ID": "us-east-1_5Ve6Xvqf9"
+                }
+              }
+            ],
+            "ephemeral_storage": [
+              {
+                "size": 512
+              }
+            ],
+            "file_system_config": [],
+            "filename": "./handler/lambda_signup_payload.zip",
+            "function_name": "process_users_signup",
+            "handler": "cognito_auth.lambda_handler",
+            "id": "process_users_signup",
+            "image_config": [],
+            "image_uri": "",
+            "invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_signup/invocations",
+            "kms_key_arn": "",
+            "last_modified": "2026-03-04T22:24:44.593+0000",
+            "layers": [],
+            "logging_config": [
+              {
+                "application_log_level": "",
+                "log_format": "Text",
+                "log_group": "/aws/lambda/process_users_signup",
+                "system_log_level": ""
+              }
+            ],
+            "memory_size": 128,
+            "package_type": "Zip",
+            "publish": false,
+            "publish_to": null,
+            "qualified_arn": "arn:aws:lambda:us-east-1:307162859835:function:process_users_signup:$LATEST",
+            "qualified_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_signup:$LATEST/invocations",
+            "region": "us-east-1",
+            "replace_security_groups_on_destroy": null,
+            "replacement_security_group_ids": null,
+            "reserved_concurrent_executions": -1,
+            "response_streaming_invoke_arn": "arn:aws:apigateway:us-east-1:lambda:path/2021-11-15/functions/arn:aws:lambda:us-east-1:307162859835:function:process_users_signup/response-streaming-invocations",
+            "role": "arn:aws:iam::307162859835:role/lambda_exec_role_websitewithauth",
+            "runtime": "python3.11",
+            "s3_bucket": null,
+            "s3_key": null,
+            "s3_object_version": null,
+            "signing_job_arn": "",
+            "signing_profile_version_arn": "",
+            "skip_destroy": false,
+            "snap_start": [],
+            "source_code_hash": "jrcrTpKmxvT+cAGOMXn8I5vLWA+Fbs/Qf3SfOWe5iYA=",
+            "source_code_size": 652,
+            "source_kms_key_arn": "",
+            "tags": {},
+            "tags_all": {},
+            "tenancy_config": [],
+            "timeout": 3,
+            "timeouts": null,
+            "tracing_config": [
+              {
+                "mode": "PassThrough"
+              }
+            ],
+            "version": "$LATEST",
+            "vpc_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "function_name": "process_users_signup",
+            "region": "us-east-1"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "data.archive_file.lambda_zip_signup"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_permission",
+      "name": "api_gw_authorize",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "action": "lambda:InvokeFunction",
+            "event_source_token": null,
+            "function_name": "process_users_authorization",
+            "function_url_auth_type": null,
+            "id": "AllowExecutionFromAPIGateway",
+            "invoked_via_function_url": null,
+            "principal": "apigateway.amazonaws.com",
+            "principal_org_id": null,
+            "qualifier": "",
+            "region": "us-east-1",
+            "source_account": null,
+            "source_arn": "arn:aws:execute-api:us-east-1:307162859835:2h1wm5fwje/*/*",
+            "statement_id": "AllowExecutionFromAPIGateway",
+            "statement_id_prefix": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "function_name": "process_users_authorization",
+            "qualifier": null,
+            "region": "us-east-1",
+            "statement_id": "AllowExecutionFromAPIGateway"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_authorization",
+            "data.archive_file.authorize_zip"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_permission",
+      "name": "api_gw_confirm",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "action": "lambda:InvokeFunction",
+            "event_source_token": null,
+            "function_name": "process_users_confirmation",
+            "function_url_auth_type": null,
+            "id": "AllowExecutionFromAPIGateway",
+            "invoked_via_function_url": null,
+            "principal": "apigateway.amazonaws.com",
+            "principal_org_id": null,
+            "qualifier": "",
+            "region": "us-east-1",
+            "source_account": null,
+            "source_arn": "arn:aws:execute-api:us-east-1:307162859835:2h1wm5fwje/*/*",
+            "statement_id": "AllowExecutionFromAPIGateway",
+            "statement_id_prefix": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "function_name": "process_users_confirmation",
+            "qualifier": null,
+            "region": "us-east-1",
+            "statement_id": "AllowExecutionFromAPIGateway"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_confirmation",
+            "data.archive_file.confirm_zip"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_permission",
+      "name": "api_gw_login",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "action": "lambda:InvokeFunction",
+            "event_source_token": null,
+            "function_name": "process_users_login",
+            "function_url_auth_type": null,
+            "id": "AllowExecutionFromAPIGateway",
+            "invoked_via_function_url": null,
+            "principal": "apigateway.amazonaws.com",
+            "principal_org_id": null,
+            "qualifier": "",
+            "region": "us-east-1",
+            "source_account": null,
+            "source_arn": "arn:aws:execute-api:us-east-1:307162859835:2h1wm5fwje/*/*",
+            "statement_id": "AllowExecutionFromAPIGateway",
+            "statement_id_prefix": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "function_name": "process_users_login",
+            "qualifier": null,
+            "region": "us-east-1",
+            "statement_id": "AllowExecutionFromAPIGateway"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_login",
+            "data.archive_file.lambda_zip_login"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_lambda_permission",
+      "name": "api_gw_signup",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "action": "lambda:InvokeFunction",
+            "event_source_token": null,
+            "function_name": "process_users_signup",
+            "function_url_auth_type": null,
+            "id": "AllowExecutionFromAPIGateway",
+            "invoked_via_function_url": null,
+            "principal": "apigateway.amazonaws.com",
+            "principal_org_id": null,
+            "qualifier": "",
+            "region": "us-east-1",
+            "source_account": null,
+            "source_arn": "arn:aws:execute-api:us-east-1:307162859835:2h1wm5fwje/*/*",
+            "statement_id": "AllowExecutionFromAPIGateway",
+            "statement_id_prefix": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "307162859835",
+            "function_name": "process_users_signup",
+            "qualifier": null,
+            "region": "us-east-1",
+            "statement_id": "AllowExecutionFromAPIGateway"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_apigatewayv2_api.lambda_cognito_api",
+            "aws_cognito_user_pool.pool",
+            "aws_cognito_user_pool_client.client",
+            "aws_iam_role.lambda_exec_role_websitewithauth",
+            "aws_lambda_function.process_users_signup",
+            "data.archive_file.lambda_zip_signup"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
