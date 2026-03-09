@@ -44,4 +44,4 @@ def returns_all_tables():
     print(response['TableNames'])
 
 if __name__ == "__main__":
-    returns_table_cv_visitors_ip()
+    returns_table_ensaio()
