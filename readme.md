@@ -29,6 +29,8 @@ This project implements a secure **Serverless Authentication Architecture** desi
 3.  **State Management:** Secure handling of authentication tokens using browser **LocalStorage** with **JavaScript Route Guards** to prevent unauthorized access to restricted UI sections.
 4.  **Infrastructure as Code (IaC):** 100% of the cloud environment (Cognito, API Gateway, Lambdas, and Networking) is provisioned and managed via **Terraform**.
 5.  **CORS & Networking:** configuration of **CORS (Cross-Origin Resource Sharing)** and **Preflight (OPTIONS)** requests to ensure secure communication between the S3-hosted frontend and the API.
+
+If you like to see it working, pleass acess http://randombucket-2026-filipe.s3-website-us-east-1.amazonaws.com
 ---
 
 ## 🇧🇷 Visão Geral do Projeto

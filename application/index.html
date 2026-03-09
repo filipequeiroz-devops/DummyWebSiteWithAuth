@@ -5,12 +5,17 @@
     <title>Signup Page</title>
 </head>
 <body>
-    <h2>Signup Page - Please fill in the details below</h2>
-    
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
-    <button id="btnSignup" onclick="signup()">Sign Up</button>
+    <h2>Create your Account</h2>
+        <p>Fill in the fields below to register for Informática Solidária.</p>
 
+        <input type="email" id="email" placeholder="Enter your best email">
+        <input type="password" id="password" placeholder="Choose a strong password">
+
+        <p style="font-size: 0.8em; color: #666;">
+            * Password must be at least 8 characters long and include numbers.
+        </p>
+
+    <button id="btnSignup" onclick="signup()">Create Account</button>
     <div id="statusMessage" style="margin-top: 20px; font-weight: bold;"></div>
 
     <script>
