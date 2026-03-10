@@ -1,4 +1,4 @@
-# Aws cognito for website authentification
+# AWS Cloud Authentication & Secure Serverless Architecture
 
 **Language / Idioma**: [🇺🇸 English](#-project-overview) | [🇧🇷 Português](#-visão-geral-do-projeto)
 
@@ -7,15 +7,15 @@
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Pytest](https://img.shields.io/badge/pytest-%230A9EDC.svg?style=for-the-badge&logo=pytest&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Amazon CloudFront](https://img.shields.io/badge/Amazon%20CloudFront-FF9900?style=for-the-badge&logo=amazoncloudfront&logoColor=white)
 ![Amazon API Gateway](https://img.shields.io/badge/Amazon%20API%20Gateway-FF4F8B?style=for-the-badge&logo=amazonapigateway&logoColor=white)
 ![AWS Lambda](https://img.shields.io/badge/AWS%20Lambda-FF9900?style=for-the-badge&logo=awslambda&logoColor=white)
 ![Amazon Cognito](https://img.shields.io/badge/Amazon%20Cognito-DD344C?style=for-the-badge&logo=amazoncognito&logoColor=white)
-![PowerShell](https://img.shields.io/badge/powershell-2C2D72?style=for-the-badge&logo=powershell&logoColor=white)
 ![Amazon S3](https://img.shields.io/badge/Amazon%20S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white) 
 
 </div>
+
 ---
 
 ## 🇺🇸 Project Overview
@@ -24,13 +24,14 @@ This project implements a secure **Serverless Authentication Architecture** desi
 
 ### 🏗️ Architecture & Security Workflow
 
-1.  **Identity Management:** Utilizes **AWS Cognito User Pools** for secure user registration, confirmation (Email verification code), and authentication.
-2.  **API Security:** Implemented a **JWT (JSON Web Token) Authorizer** at the **API Gateway** level to protect backend resources.
-3.  **State Management:** Secure handling of authentication tokens using browser **LocalStorage** with **JavaScript Route Guards** to prevent unauthorized access to restricted UI sections.
-4.  **Infrastructure as Code (IaC):** 100% of the cloud environment (Cognito, API Gateway, Lambdas, and Networking) is provisioned and managed via **Terraform**.
-5.  **CORS & Networking:** configuration of **CORS (Cross-Origin Resource Sharing)** and **Preflight (OPTIONS)** requests to ensure secure communication between the S3-hosted frontend and the API.
+1.  **Identity Management:** Utilizes **AWS Cognito User Pools** for secure user registration and email verification.
+2.  **API Security:** Implemented a **JWT (JSON Web Token) Authorizer** at the **API Gateway** level.
+3.  **State Management:** Secure handling of tokens using **LocalStorage** and **Route Guards**.
+4.  **Infrastructure as Code (IaC):** 100% of the environment is managed via **Terraform**.
+5.  **Quality Assurance:** Backend logic is validated through automated **Unit Tests** using **Pytest**, ensuring Lambda functions handle payloads and exceptions correctly.
 
-If you like to see it working, pleass acess http://randombucket-2026-filipe.s3-website-us-east-1.amazonaws.com
+> **Live Demo:** [Check it working here](http://randombucket-2026-filipe.s3-website-us-east-1.amazonaws.com)
+
 ---
 
 ## 🇧🇷 Visão Geral do Projeto
@@ -39,20 +40,20 @@ Este projeto implementa uma **Arquitetura de Autenticação Serverless** segura,
 
 ### 🏗️ Arquitetura e Fluxo de Segurança
 
-1.  **Gestão de Identidade:** Utiliza **AWS Cognito User Pools** para registro seguro de usuários, confirmação via código e autenticação.
-2.  **Segurança de API:** Implementação de um **Authorizer JWT (JSON Web Token)** no **API Gateway** para proteger recursos de backend de acessos não autorizados.
-3.  **Gestão de Estado:** Manipulação segura de tokens de autenticação via **LocalStorage** e **Route Guards** em JavaScript para proteger rotas sensíveis no frontend.
-4.  **Infraestrutura como Código (IaC):** Todo o ambiente cloud (Cognito, API Gateway, Lambdas e Redes) é provisionado e gerenciado via **Terraform**.
-5.  **CORS e Redes:** Configuração avançada de políticas de **CORS** e requisições **Preflight (OPTIONS)** para permitir a comunicação segura entre o frontend (S3) e os endpoints da API.
+1.  **Gestão de Identidade:** Utiliza **AWS Cognito User Pools** para registro seguro e verificação de e-mail.
+2.  **Segurança de API:** Implementação de um **Authorizer JWT** no **API Gateway**.
+3.  **Gestão de Estado:** Manipulação de tokens via **LocalStorage** e **Route Guards** em JavaScript.
+4.  **Infraestrutura como Código (IaC):** Todo o ambiente é provisionado via **Terraform**.
+5.  **Garantia de Qualidade:** A lógica do backend é validada através de **Testes Unitários** automatizados com **Pytest**, garantindo que as Lambdas processem payloads e exceções corretamente.
 
 ---
 
-### 🚀 Tech Stack
+### 🚀 Tech Stack & Testing
 
 * **Cloud:** AWS (Cognito, API Gateway, Lambda, S3).
 * **IaC:** Terraform.
-* **Language:** Python (Backend/Lambda) and JavaScript (Frontend/Logic).
-* **CI/CD:** GitHub Actions for automated deployment.
+* **Testing:** **Pytest** for backend validation.
+* **CI/CD:** GitHub Actions for automated deployment and test execution.
 
 ---
 
